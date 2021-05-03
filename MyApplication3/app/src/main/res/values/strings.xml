@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title">
+        Hello.
+        \nThis is CafeBot.
+    </string>
+    <string name="title2">
+        랜덤 추천 메뉴
+    </string>
+    <string name="refresh">메뉴 변경</string>
+    <string name="list_num">순서</string>
+    <string name="slash">/</string>
+    <string name="list_maximum">10</string>
+    <string name="filter">필터</string>
+
+
+</resources>
