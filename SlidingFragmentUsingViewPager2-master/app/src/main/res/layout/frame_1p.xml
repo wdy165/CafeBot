@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cf">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="490dp">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="105dp"
+            android:layout_height="110dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:background="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="42dp"
+            android:layout_marginTop="32dp"
+            android:layout_toRightOf="@+id/img_logo"
+            android:text="Cafe List"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_rect"
+            android:layout_width="350dp"
+            android:layout_height="340dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginRight="31dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="@color/white" />
+
+        <ImageView
+            android:id="@+id/sb"
+            android:layout_width="wrap_content"
+            android:layout_height="118dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignEnd="@+id/tt"
+            android:layout_alignRight="@+id/tt"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="228dp"
+            android:layout_marginRight="228dp"
+            android:background="@drawable/starbucks" />
+
+        <ImageView
+            android:id="@+id/tcb"
+            android:layout_width="118dp"
+            android:layout_height="122dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignStart="@+id/sb"
+            android:layout_alignLeft="@+id/sb"
+            android:layout_alignEnd="@+id/tt"
+            android:layout_alignRight="@+id/tt"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="115dp"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginRight="114dp"
+            android:background="@drawable/coffeebean" />
+
+        <ImageView
+            android:id="@+id/tt"
+            android:layout_width="115dp"
+            android:layout_height="122dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignStart="@+id/cbay"
+            android:layout_alignLeft="@+id/cbay"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="238dp"
+            android:layout_marginLeft="238dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/tomntoms" />
+
+        <ImageView
+            android:id="@+id/angel"
+            android:layout_width="wrap_content"
+            android:layout_height="111dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignEnd="@+id/img_rect"
+            android:layout_alignRight="@+id/img_rect"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="149dp"
+            android:layout_marginEnd="238dp"
+            android:layout_marginRight="238dp"
+            android:layout_marginBottom="117dp"
+            android:background="@drawable/angelinus" />
+
+        <ImageView
+            android:id="@+id/paik"
+            android:layout_width="wrap_content"
+            android:layout_height="115dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignStart="@+id/img_rect"
+            android:layout_alignLeft="@+id/img_rect"
+            android:layout_alignEnd="@+id/img_rect"
+            android:layout_alignRight="@+id/img_rect"
+            android:layout_marginStart="116dp"
+            android:layout_marginLeft="116dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginEnd="119dp"
+            android:layout_marginRight="119dp"
+            android:background="@drawable/paik" />
+
+        <ImageView
+            android:id="@+id/compose"
+            android:layout_width="wrap_content"
+            android:layout_height="118dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignStart="@+id/img_rect"
+            android:layout_alignLeft="@+id/img_rect"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="229dp"
+            android:layout_marginLeft="229dp"
+            android:layout_marginTop="142dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginRight="33dp"
+            android:background="@drawable/compose" />
+
+        <ImageView
+            android:id="@+id/ediya"
+            android:layout_width="113dp"
+            android:layout_height="114dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignEnd="@+id/pas"
+            android:layout_alignRight="@+id/pas"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="265dp"
+            android:layout_marginEnd="229dp"
+            android:layout_marginRight="229dp"
+            android:background="@drawable/ediya" />
+
+        <ImageView
+            android:id="@+id/venti"
+            android:layout_width="117dp"
+            android:layout_height="115dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignStart="@+id/ediya"
+            android:layout_alignLeft="@+id/ediya"
+            android:layout_alignEnd="@+id/pas"
+            android:layout_alignRight="@+id/pas"
+            android:layout_marginStart="116dp"
+            android:layout_marginLeft="116dp"
+            android:layout_marginTop="267dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginRight="108dp"
+            android:background="@drawable/theventi" />
+
+        <ImageView
+            android:id="@+id/pas"
+            android:layout_width="109dp"
+            android:layout_height="115dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="237dp"
+            android:layout_marginLeft="237dp"
+            android:layout_marginTop="264dp"
+            android:layout_marginEnd="37dp"
+            android:layout_marginRight="37dp"
+            android:background="@drawable/pascucci" />
+
+        <ImageView
+            android:id="@+id/next_btn"
+            android:layout_width="32dp"
+            android:layout_height="74dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="170dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</FrameLayout>
