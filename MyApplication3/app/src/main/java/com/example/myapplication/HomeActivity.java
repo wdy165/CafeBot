@@ -1,9 +1,9 @@
 package com.example.myapplication;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
 
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         ArrayList<DataPage> list = new ArrayList<>();
         list.add(new DataPage(R.drawable.sample_1,"Starbucks", 4900));
