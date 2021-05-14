@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_size">
+        <item name="android:textSize">@dimen/menu_text_size</item>
+    </style>
+    <style name="MenuText">
+
+        <item name="android:textColor">@android:color/black</item>
+
+    </style>
+</resources>
