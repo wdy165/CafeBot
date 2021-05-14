@@ -27,8 +27,8 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewHolderPage> {
     @Override
     public void onBindViewHolder(ViewHolderPage holder, int position) {
         if(holder instanceof ViewHolderPage){
-            //ViewHolderPage viewHolder = (ViewHolderPage) holder;
-            holder.onBind(listData.get(position));
+            ViewHolderPage viewHolder = (ViewHolderPage) holder;
+            viewHolder.onBind(listData.get(position));
         }
     }
 

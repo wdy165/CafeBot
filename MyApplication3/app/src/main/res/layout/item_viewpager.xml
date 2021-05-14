@@ -13,7 +13,6 @@
         android:gravity="center_horizontal"
         android:textColor="@android:color/black"
         android:textSize="26sp"
-        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sample_image" />

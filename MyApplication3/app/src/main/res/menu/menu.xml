@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/action_guide"
-        android:title="@string/action_guide"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_qna"
-        android:title="@string/action_qna"
-        app:showAsAction="never" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="nav_view">
+
+
+        <item
+            android:id="@+id/action_guide"
+            android:title="@string/action_guide"
+
+            />
+        <item
+            android:id="@+id/action_qna"
+            android:title="@string/action_qna"
+
+            />
+        <item
+            android:id="@+id/action_made"
+            android:title="@string/action_made"
+
+            />
+
 
 </menu>

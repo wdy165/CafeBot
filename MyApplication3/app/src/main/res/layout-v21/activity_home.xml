@@ -56,7 +56,8 @@
                 android:textSize="18sp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                app:layout_constraintStart_toEndOf="@+id/TitleText2" />
+                app:layout_constraintStart_toEndOf="@+id/TitleText2"
+                tools:ignore="MissingConstraints" />
 
             <ImageButton
                 android:id="@+id/filterButton"

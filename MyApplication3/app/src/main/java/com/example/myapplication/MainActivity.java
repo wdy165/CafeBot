@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
 
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
+
 import androidx.viewpager2.widget.ViewPager2;
 
 import androidx.fragment.app.FragmentManager;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
 
     // 가운데
-    private ViewPager2 view_Pager2;
+    private ViewPager2 viewPager2;
     private DotsIndicator dotsIndicator;
     private ArrayList<DataPage> list;
 
@@ -59,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
         this.viewpage(); // 뷰페이저
 
+        //FragmentTransaction transaction = fragmentManager.beginTransaction();
+        //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
+        // 바텀네비게이션
+
     }
 
     //툴바
@@ -67,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+
 
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -99,32 +106,42 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+
         return true;
     }
 
     //추가된 소스, ToolBar에 추가된 항목의 select 이벤트를 처리하는 함수
-    @Override
+
+
     public boolean onOptionsItemSelected(MenuItem item) {
         //return super.onOptionsItemSelected(item);
-        int id = item.getItemId();
-        switch (id) {
+
+        switch (item.getItemId()) {
+
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
 
             case R.id.action_guide:
-                ((TextView) findViewById(R.id.textView)).setText("Guide");
-                Toast.makeText(getApplicationContext(), "가이드 버튼 클릭됨", Toast.LENGTH_LONG).show();
-                return true;
 
-            case R.id.action_qna:
-                ((TextView) findViewById(R.id.textView)).setText("QnA");
-                Toast.makeText(getApplicationContext(), "QnA 버튼 클릭됨", Toast.LENGTH_LONG).show();
-                return true;
+                Intent intent5 = new Intent(getApplicationContext(), com.example.myapplication.GuideActivity.class);
+                startActivity(intent5);
+            //가이드 액티비티 실행
+
+
+            //qna맥티비티 실행
+
+            case R.id.action_made:
+                ((TextView) findViewById(R.id.textView)).setText("제작");
+
+                    Toast myToast = Toast.makeText(this.getApplicationContext(),R.string.madeby, Toast.LENGTH_SHORT);
+                    myToast.show();
+            // 제작자 표시 메시지
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
     private void viewpage(){
         list = new ArrayList<>();
@@ -139,11 +156,11 @@ public class MainActivity extends AppCompatActivity {
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
 
-        view_Pager2 = findViewById(R.id.viewPager2);
-        view_Pager2.setAdapter(new ViewPagerAdapter(list));
+        viewPager2 = findViewById(R.id.viewPager2);
+        viewPager2.setAdapter(new ViewPagerAdapter(list));
 
         dotsIndicator = findViewById(R.id.dots_indicator);
-        dotsIndicator.setViewPager2(view_Pager2);
+        dotsIndicator.setViewPager2(viewPager2);
     }
 
     //바텀네비

@@ -7,6 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_guide">Guide</string>
     <string name="action_qna">QnA</string>
+    <string name="action_made">제작</string>
+    <string name="madeby">카페인 : 원동연, 조민수, 최선재, 최수현, 홍지원</string>
+
+
     <string name="title">
         Hello.
         \nThis is CafeBot.
@@ -14,8 +18,6 @@
     <string name="title2">
         랜덤 추천 메뉴
     </string>
-    <string name="result_text1">검색어 없음</string>
-    <string name="result_text2">을/를 검색(선택)한 결과</string>
     <string name="refresh">메뉴 변경</string>
     <string name="list_num">순서</string>
     <string name="slash">/</string>
@@ -42,6 +44,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="menu"><![CDATA[<-Menu]]></string>
 
 
 </resources>

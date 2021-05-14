@@ -20,9 +20,9 @@ public class LoadingActivity extends Activity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getBaseContext(), GuideActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         }, 2000);
     }
