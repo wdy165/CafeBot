@@ -83,7 +83,8 @@
                 android:background="@color/cfb"
                 app:layout_constraintBottom_toTopOf="@+id/viewPager2"
                 app:layout_constraintStart_toEndOf="@+id/TitleText2"
-                app:srcCompat="@drawable/refresh_111075__2_" />
+                app:srcCompat="@layout/ref_button_event"
+                android:onClick="onRefreshButton"/>
 
             <TextView
                 android:id="@+id/refreshText"

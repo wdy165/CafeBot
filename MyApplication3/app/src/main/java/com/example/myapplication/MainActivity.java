@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     // 툴바
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.InitializeLayout(); // 툴바
 
-        this.viewpage(); // 뷰페이저
+        this.viewpage(randomMenu()); // 뷰페이저
 
         //FragmentTransaction transaction = fragmentManager.beginTransaction();
         //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
@@ -128,38 +131,66 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent5);
                 return true;
             //가이드 액티비티 실행
-
-
+            case R.id.action_qna:
+                Intent intent6 = new Intent(getApplicationContext(), com.example.myapplication.QnaActivity.class);
+                startActivity(intent6);
+                return true;
             //qna맥티비티 실행
-
             case R.id.action_made:
                 ((TextView) findViewById(R.id.textView)).setText("제작");
 
-                    Toast myToast = Toast.makeText(this.getApplicationContext(),R.string.madeby, Toast.LENGTH_SHORT);
-                    myToast.show();
-                    return true;
+                Toast myToast = Toast.makeText(this.getApplicationContext(), R.string.madeby, Toast.LENGTH_SHORT);
+                myToast.show();
+                return true;
             // 제작자 표시 메시지
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    // 새로고침 버튼
+    public void onRefreshButton(View v) {
+        viewpage(randomMenu());
+    }
 
-    private void viewpage(){
+    // 메뉴 리스트
+    public ArrayList<DataPage> randomMenu() {
         list = new ArrayList<>();
-        list.add(new DataPage(R.drawable.sample_1, "아메리카노","스타벅스", 4900));
-        list.add(new DataPage(R.drawable.sample_2, "아메리카노","투썸플레이스", 4100));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","이디야커피", 3000));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
-        list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
+        list.add(new DataPage(R.drawable.sample_1, "아메리카노", "스타벅스", 4900));
+        list.add(new DataPage(R.drawable.sample_2, "아메리카노", "투썸플레이스", 4100));
+        list.add(new DataPage(R.drawable.sample_3, "아메리카노", "이디야커피", 3000));
+        list.add(new DataPage(R.drawable.sample_4, "망고 스무디", "공차", 5300));
+        list.add(new DataPage(R.drawable.sample_5, "치즈폼 딥초코 스무디", "공차", 5300));
+        list.add(new DataPage(R.drawable.sample_6, "바닐라 딜라이트", "할리스", 4500));
+        list.add(new DataPage(R.drawable.sample_7, "에스프레소", "할리스", 2500));
+        list.add(new DataPage(R.drawable.sample_8, "고구마라떼", "메가커피", 3000));
+        list.add(new DataPage(R.drawable.sample_9, "자몽티", "메가커피", 3000));
+        list.add(new DataPage(R.drawable.sample_10, "타로 밀크티", "공차", 4000));
+        list.add(new DataPage(R.drawable.sample_11, "녹차라떼", "빽다방", 3000));
+        list.add(new DataPage(R.drawable.sample_12, "달콤아이스티", "빽다방", 2500));
+        list.add(new DataPage(R.drawable.sample_13, "긴페스츄리와플", "빽다방", 3000));
+        list.add(new DataPage(R.drawable.sample_14, "큰마들렌", "빽다방", 3000));
+        list.add(new DataPage(R.drawable.sample_15, "완전딸기바나나 빽스치노(SOFT)", "빽다방", 4000));
+
+        return list;
+    }
+
+    private void viewpage(ArrayList<DataPage> list) {
+        // 전체 메뉴 리스트 가져옴
+        ArrayList randomList = new ArrayList<>();
+
+        // 랜덤 함수 이용
+        Random ra = new Random();
+
+        // 전체 리스트에서 메뉴 10개만 랜덤으로 가져옴
+        for (int i=0; i<10; i++) {
+            int rv = ra.nextInt(list.size());
+            randomList.add(list.get(rv));
+            list.remove(rv);
+        }
 
         viewPager2 = findViewById(R.id.viewPager2);
-        viewPager2.setAdapter(new ViewPagerAdapter(list));
+        viewPager2.setAdapter(new ViewPagerAdapter(randomList));
 
         dotsIndicator = findViewById(R.id.dots_indicator);
         dotsIndicator.setViewPager2(viewPager2);
