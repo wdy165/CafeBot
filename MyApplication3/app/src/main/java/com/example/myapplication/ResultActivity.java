@@ -24,7 +24,7 @@ public class ResultActivity extends AppCompatActivity {
     private ViewPager2 result_ViewPager2;
     private DotsIndicator dotsIndicator;
     private ArrayList<DataPage> list;
-
+    private TextView resultNum;
     // 바텀네비게이션뷰
     private BottomNavigationView bottomNav;
     private FragmentManager fragmentManager = getSupportFragmentManager();
@@ -48,6 +48,7 @@ public class ResultActivity extends AppCompatActivity {
     private void findSearchDataValue(){
         Intent dataIntent = getIntent();
         String keyword = dataIntent.getStringExtra("검색어");
+
         resultText = (TextView) findViewById(R.id.resultText1);
         resultText.setText(keyword);
     }
@@ -65,11 +66,12 @@ public class ResultActivity extends AppCompatActivity {
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
 
+        resultNum = (TextView) findViewById(R.id.resultSumNum);
+        int dataNum = list.size();
+        resultNum.setText(String.valueOf(dataNum));
+
         result_ViewPager2 = findViewById(R.id.resultViewPager2);
         result_ViewPager2.setAdapter(new ViewPagerAdapter(list));
-
-        dotsIndicator = findViewById(R.id.dots_indicator);
-        dotsIndicator.setViewPager2(result_ViewPager2);
     }
 
     //바텀네비
