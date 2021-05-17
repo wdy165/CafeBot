@@ -29,8 +29,8 @@ public class QnaActivity extends AppCompatActivity {
     private Button button; // 전송 버튼
 
     // 발신자와 수신자는 모두 관리자
-    private String user = "ehddus3432@gmail.com"; // 보내는 사람의 이메일 주소
-    private String pwd = "aktk132Rk!"; // 보내는 사람의 이메일 비밀번호
+    private String user = ""; // 보내는 사람의 이메일 주소
+    private String pwd = ""; // 보내는 사람의 이메일 비밀번호
 
     // 바텀네비게이션뷰
     private BottomNavigationView bottomNav;
