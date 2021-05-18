@@ -81,26 +81,39 @@
                 app:layout_constraintVertical_bias="0.3" />
 
             <TextView
+                android:id="@+id/resultCurNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:layout_constraintRight_toLeftOf="@+id/resultSlash"
+                app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                android:id="@+id/resultSlash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text=" / "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/resultViewPager2"
+                app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
                 android:id="@+id/resultSumNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                app:layout_constraintRight_toLeftOf="@+id/resultSum"
+                app:layout_constraintLeft_toRightOf="@+id/resultSlash"
                 app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
                 app:layout_constraintBottom_toBottomOf="parent"/>
-            <TextView
-                android:id="@+id/resultSum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:text=" 건의 메뉴가 검색되었습니다."
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+
 <!--
             <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                 android:id="@+id/dots_indicator"

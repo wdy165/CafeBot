@@ -22,9 +22,10 @@ public class ResultActivity extends AppCompatActivity {
 
     // 가운데
     private ViewPager2 result_ViewPager2;
-    private DotsIndicator dotsIndicator;
+    private ViewPagerAdapter pageNum;
     private ArrayList<DataPage> list;
-    private TextView resultNum;
+    private TextView resultNum, resultCur;
+
     // 바텀네비게이션뷰
     private BottomNavigationView bottomNav;
     private FragmentManager fragmentManager = getSupportFragmentManager();
@@ -66,12 +67,26 @@ public class ResultActivity extends AppCompatActivity {
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", 3000));
 
+        resultCur = (TextView) findViewById(R.id.resultCurNum);
         resultNum = (TextView) findViewById(R.id.resultSumNum);
-        int dataNum = list.size();
-        resultNum.setText(String.valueOf(dataNum));
 
         result_ViewPager2 = findViewById(R.id.resultViewPager2);
         result_ViewPager2.setAdapter(new ViewPagerAdapter(list));
+
+        // 총 페이지 숫자
+        pageNum = new ViewPagerAdapter(list);
+        int sumNum = pageNum.getItemCount();
+        resultNum.setText(String.valueOf(sumNum));
+        resultCur.setText(String.valueOf(1)); // 초기값 1
+
+        // 현재 페이지 숫자
+        result_ViewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback(){
+            @Override
+            public void onPageSelected(int position){
+                super.onPageSelected(position);
+                resultCur.setText(String.valueOf(position + 1));
+            }
+        });
     }
 
     //바텀네비
