@@ -54,7 +54,7 @@
                 android:layout_marginRight="28dp"
                 android:background="@color/cfb"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/resultSum"
+                app:layout_constraintBottom_toBottomOf="@+id/resultSumNum"
                 app:srcCompat="@drawable/filter" />
 
             <TextView
