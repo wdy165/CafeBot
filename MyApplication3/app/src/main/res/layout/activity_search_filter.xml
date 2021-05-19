@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bgc"
+    tools:context=".FilterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#4D472A77"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <CheckBox
+            android:id="@+id/cb18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/venti"
+            app:layout_constraintStart_toEndOf="@+id/cb17"
+            app:layout_constraintTop_toBottomOf="@+id/cb15" />
+
+        <CheckBox
+            android:id="@+id/cb15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mega"
+            app:layout_constraintStart_toEndOf="@+id/cb14"
+            app:layout_constraintTop_toBottomOf="@+id/cb12" />
+
+        <CheckBox
+            android:id="@+id/cb12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/EDIYA"
+            app:layout_constraintStart_toEndOf="@+id/cb11"
+            app:layout_constraintTop_toBottomOf="@+id/cb9" />
+
+        <CheckBox
+            android:id="@+id/cb9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tomntoms"
+            app:layout_constraintStart_toEndOf="@+id/cb8"
+            app:layout_constraintTop_toBottomOf="@+id/cb6" />
+
+        <CheckBox
+            android:id="@+id/cb6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pascucci"
+            app:layout_constraintStart_toEndOf="@+id/cb5"
+            app:layout_constraintTop_toBottomOf="@+id/cb3" />
+
+        <CheckBox
+            android:id="@+id/cb16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/caffebene"
+            app:layout_constraintEnd_toStartOf="@+id/cb17"
+            app:layout_constraintTop_toBottomOf="@+id/cb13" />
+
+        <CheckBox
+            android:id="@+id/cb13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/paik"
+            app:layout_constraintEnd_toStartOf="@+id/cb14"
+            app:layout_constraintTop_toBottomOf="@+id/cb10" />
+
+        <CheckBox
+            android:id="@+id/cb10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/droptop"
+            app:layout_constraintEnd_toStartOf="@+id/cb11"
+            app:layout_constraintTop_toBottomOf="@+id/cb7" />
+
+        <CheckBox
+            android:id="@+id/cb7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/twosome"
+            app:layout_constraintEnd_toStartOf="@+id/cb8"
+            app:layout_constraintTop_toBottomOf="@+id/cb4" />
+
+        <CheckBox
+            android:id="@+id/cb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Angel"
+            app:layout_constraintEnd_toStartOf="@+id/cb5"
+            app:layout_constraintTop_toBottomOf="@+id/cb1" />
+
+        <CheckBox
+            android:id="@+id/cb17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yoger"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb14" />
+
+        <CheckBox
+            android:id="@+id/cb14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gongcha"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb11" />
+
+        <CheckBox
+            android:id="@+id/cb11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/paulbassett"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb8" />
+
+        <CheckBox
+            android:id="@+id/cb8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coffeebay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb5" />
+
+        <CheckBox
+            android:id="@+id/cb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coffeebean"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/cb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Starbucks"
+            app:layout_constraintEnd_toStartOf="@+id/cb5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/cb5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hollys"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb2" />
+
+        <CheckBox
+            android:id="@+id/cb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/compose"
+            app:layout_constraintStart_toEndOf="@+id/cb5"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constLayout">
+
+        <RadioButton
+            android:id="@+id/sortHigh2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_high" />
+
+        <RadioButton
+            android:id="@+id/sortLow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_low" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/goback2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goback"
+        android:text="@string/goback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
