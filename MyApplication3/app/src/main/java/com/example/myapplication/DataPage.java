@@ -1,6 +1,6 @@
 package com.example.myapplication;
 
-public class DataPage {
+public class DataPage implements Comparable<DataPage>  {
     int image;
     String cafeName;
     String menuName;
@@ -43,5 +43,13 @@ public class DataPage {
 
     public void setPrice(int price){
         this.price = price;
+    }
+
+    @Override
+    public int compareTo(DataPage o) {
+        int targetPrice = o.getPrice();
+        if(price == targetPrice) return 0;
+        else if(price > targetPrice) return 1;
+        else return -1;
     }
 }

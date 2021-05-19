@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
+    <!-- // 인터넷 접근 권한 허용 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +12,21 @@
         android:roundIcon="@mipmap/ic_cafebot_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name=".DessertMenu"
+            android:label="디저트"
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
+        <activity
+            android:name=".DrinkMenu"
+            android:label="커피 &amp; 음료"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".SearchFilter"
+            android:label="랜덤 메뉴 필터"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".FilterActivity"
+            android:label="랜덤 메뉴 필터"
+            android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".LoadingActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -31,16 +48,10 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
-
-        <activity android:name=".MainCflistActivity"/>
+        <activity android:name=".MainCflistActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".ResultActivity"/>
-        <activity android:name=".QnaActivity"/>
-
-
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".QnaActivity" />
     </application>
-
-<!--    // 인터넷 접근 권한 허용-->
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

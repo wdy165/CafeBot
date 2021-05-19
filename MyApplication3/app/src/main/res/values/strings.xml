@@ -26,13 +26,35 @@
     <string name="filter">필터</string>
 
     <!-- 카테고리 분류 -->
-    <string name="menu_coffeedrink">커피&#38;음료&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;></string>
-    <string name="menu_dessert">디저트&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;></string>
+    <string name="menu_coffeedrink">커피&#38;음료</string>
+    <string name="menu_dessert">디저트</string>
+
+    <string name="menu_caffein">카페인</string>
 
     <!-- 커피&음료 분류-->
-    <string name="menu_caffein">카페인&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;></string>
-    <string name="menu_decaf">디카페인&#160;커피></string>
-    <string name="menu_blended">블렌디드&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;></string>
+    <string name="category_caffeine">카페인</string>
+    <string name="category_decaffeine">디카페인</string>
+    <string name="category_latte">라떼</string>
+    <string name="category_blended">블렌디드</string>
+    <string name="category_yogurt">요거트</string>
+    <string name="category_ade">에이드</string>
+    <string name="category_tea">티</string>
+    <string name="category_frappe">프라페</string>
+    <string name="category_shake">쉐이크</string>
+    <string name="category_smoothie">스무디</string>
+    <string name="category_juice">과일주스</string>
+    <string name="category_Espresso"><![CDATA[에스프레소&라떼]]></string>
+    <string name="category_coldbrew">콜드브루</string>
+
+
+    <!-- 디저트 분류-->
+    <string name="category_cake">케이크</string>
+    <string name="category_icecream">아이스크림</string>
+    <string name="category_sandwich">샌드위치</string>
+    <string name="category_bakery">베이커리</string>
+    <string name="category_salad">샐러드</string>
+    <string name="category_bingsu">빙수</string>
+    <string name="category_etc">기타</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
@@ -47,5 +69,30 @@
     <string name="title_notifications">Notifications</string>
     <string name="menu"><![CDATA[<-Menu]]></string>
 
+    <string name="filter_low">가격 낮은 순</string>
+    <string name="filter_high">가격 높은 순</string>
+    <string name="goback">적용</string>
+
+
+    <string name="Starbucks">스타벅스</string>
+    <string name="coffeebean">커피빈</string>
+    <string name="compose">컴포즈커피</string>
+    <string name="Angel">엔제리너스</string>
+    <string name="hollys">할리스커피</string>
+    <string name="pascucci">파스쿠찌</string>
+    <string name="twosome">투썸플레이스</string>
+    <string name="coffeebay">커피베이</string>
+    <string name="tomntoms">탐앤탐스</string>
+    <string name="droptop">카페드롭탑</string>
+    <string name="paulbassett">폴바셋</string>
+    <string name="EDIYA">이디야커피</string>
+    <string name="paik">빽다방</string>
+    <string name="gongcha">공차</string>
+    <string name="mega">메가커피</string>
+    <string name="caffebene">카페베네</string>
+    <string name="yoger">요거프레소</string>
+    <string name="venti">더 벤티</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
