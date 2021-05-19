@@ -73,7 +73,7 @@
                     android:layout_marginEnd="15dp"
                     android:layout_marginRight="28dp"
                     android:background="@color/cfb"
-                    android:onClick="filter"
+                    android:onClick="mainFilter"
                     app:layout_constraintBottom_toTopOf="@+id/filterText"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:srcCompat="@drawable/filter" />

@@ -92,5 +92,7 @@
     <string name="caffebene">카페베네</string>
     <string name="yoger">요거프레소</string>
     <string name="venti">더 벤티</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

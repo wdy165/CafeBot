@@ -101,34 +101,34 @@ public class MainActivity extends AppCompatActivity {
                 int id = menuItem.getItemId();
 
                 if(id == R.id.nav_coffeedrink){
-                    //categoryDrink();
+                    categoryDrink();
                 }
                 else if(id == R.id.nav_dessert){
-                    //categoryDessert();
+                    categoryDessert();
                 }
                 return true;
             }
         });
     }
 
-
-    // 필터 버튼 눌릴 때 실행 MainActivity의 FilterButton 에 onClick에 설정해둠
-    public void filter(View v){
-        // 메인 화면에서의 필터라면 mainFilter 실행
-        mainFilter();
-        // 검색 화면에서의 카페 필터라면 cafeFilter 실행
-        //cafeFilter();
+    // 디저트 선택시 실행
+    public void categoryDessert(){
+        Intent intent = new Intent(getApplicationContext(), DessertMenu.class);
+        intent.putExtra("categoryState", categoryState);
+        intent.putExtra("subcategoryState", subcategoryState);
+        startActivityForResult(intent, 2);
     }
 
-    // 검색 화면에서 카페 필터시
-    public void cafeFilter(){
-        Intent intent = new Intent(getApplicationContext(), SearchFilter.class);
-        intent.putExtra("cafeState", cafeState);
-        startActivityForResult(intent, 1);
+    // 커피, 음료 선택시 실행
+    public void categoryDrink(){
+        Intent intent = new Intent(getApplicationContext(), DrinkMenu.class);
+        intent.putExtra("categoryState", categoryState);
+        intent.putExtra("subcategoryState", subcategoryState);
+        startActivityForResult(intent, 2);
     }
 
     // 메인 화면에서 단순히 가격 필터시
-    public void mainFilter(){
+    public void mainFilter(View v){
         Intent intent = new Intent(getApplicationContext(), FilterActivity.class);
         intent.putExtra("state", state);
         startActivityForResult(intent, 0);
@@ -143,8 +143,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    //추가된 소스, ToolBar에 추가된 항목의 select 이벤트를 처리하는 함수
-
     // 액티비티 종료시 자동 실행
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -153,15 +151,11 @@ public class MainActivity extends AppCompatActivity {
         // Fragment로 넘겨 받은 값을 넣는다.
         subcategoryState = data.getIntExtra("subcategoryState", 0);
 
-
         // requestCode 는 cafeFilter에서 실행시 0으로 넘기고 mainFilter에서 실행시 1을 넘긴다
         // 카테고리 분류작업은 2를 넘긴다.
         switch (requestCode){
             case 0 :
                 mainFiltering(resultCode);
-                break;
-            case 1 :
-                searchFiltering(resultCode);
                 break;
             case 2 :
                 categorySetting(resultCode);
@@ -170,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
     // 카테고리 분류 메소드
     public void categorySetting(int resultCode){
         categoryState = resultCode;
@@ -249,16 +244,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void searchFiltering(int resultCode){
-        // 현재 상태를 저장한다.
-        cafeState = resultCode;
-        // 마지막 비트를 확인해서 가격 오름, 내림 정렬을 결정한다.
-        dataSort(cafeState % 2);
-
-        // 이곳에 cafeState의 각 비트를 확인해서 특정 카페를 데이터에서 받아와 list에 넣거나
-        // 혹은 이미 list에 있는 데이터 중 특정 카페를 제거 하는 식의 코드를 넣으면 됨
-    }
-
     public void mainFiltering(int resultCode){
         // 현재 상태를 저장한다.
         state = resultCode;
@@ -279,6 +264,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager2.setAdapter(new ViewPagerAdapter(list));
     }
 
+    //추가된 소스, ToolBar에 추가된 항목의 select 이벤트를 처리하는 함수
     public boolean onOptionsItemSelected(MenuItem item) {
         //return super.onOptionsItemSelected(item);
 
@@ -351,6 +337,9 @@ public class MainActivity extends AppCompatActivity {
             randomList.add(list.get(rv));
             list.remove(rv);
         }
+
+        this.list.clear();
+        this.list.addAll(randomList);
 
         viewPager2 = findViewById(R.id.viewPager2);
         viewPager2.setAdapter(new ViewPagerAdapter(randomList));

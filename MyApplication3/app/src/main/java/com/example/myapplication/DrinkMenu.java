@@ -28,7 +28,6 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
     private RadioButton tea;
     private TextView textView;
 
-
     FragmentBlended fragmentBlended;
     FragmentCaffeine fragmentCaffeine;
 
@@ -40,8 +39,6 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drink_menu);
-
-
 
         radioGroup = (RadioGroup)findViewById(R.id.radioGroup3);
         caffeine = (RadioButton)findViewById(R.id.caffeine);
@@ -58,10 +55,19 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
 
         Intent intent = getIntent();
         categoryState = intent.getExtras().getInt("categoryState");
+        subcategoryState = intent.getExtras().getInt("subcategoryState");
 
         switch (categoryState){
             case 1 :
                 caffeine.setChecked(true);
+                textView.setText("카페인");
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                Bundle bundle = new Bundle();
+                bundle.putInt("subcategoryState", subcategoryState);
+                fragmentCaffeine.setArguments(bundle);
+
+                transaction.replace(R.id.fragment_container, fragmentCaffeine);
+                transaction.commit();
                 break;
             case 2 :
                 decaffeine.setChecked(true);
@@ -71,6 +77,14 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
                 break;
             case 4 :
                 blended.setChecked(true);
+                textView.setText("블렌디드");
+                FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
+                Bundle bundle2 = new Bundle();
+                bundle2.putInt("subcategoryState", subcategoryState);
+                fragmentBlended.setArguments(bundle2);
+
+                transaction2.replace(R.id.fragment_container, fragmentBlended);
+                transaction2.commit();
                 break;
             case 5 :
                 yogurt.setChecked(true);
@@ -86,6 +100,7 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
         }
     }
     public void selectElse(View v){
+        textView.setText("");
 
         if(fragmentBlended.isAdded()){
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
