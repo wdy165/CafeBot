@@ -1,12 +1,12 @@
 package com.example.myapplication;
 
-public class DataPage implements Comparable<DataPage>  {
+public class DataPage {
     int image;
     String cafeName;
     String menuName;
-    int price;
+    String price;
 
-    public DataPage(int image, String menuName, String cafeName, int price){
+    public DataPage(int image, String menuName, String cafeName, String price){
         this.image = image;
         this.menuName = menuName;
         this.cafeName = cafeName;
@@ -37,19 +37,11 @@ public class DataPage implements Comparable<DataPage>  {
         this.cafeName = cafeName;
     }
 
-    public int getPrice(){
+    public String getPrice(){
         return price;
     }
 
-    public void setPrice(int price){
+    public void setPrice(String price){
         this.price = price;
-    }
-
-    @Override
-    public int compareTo(DataPage o) {
-        int targetPrice = o.getPrice();
-        if(price == targetPrice) return 0;
-        else if(price > targetPrice) return 1;
-        else return -1;
     }
 }

@@ -32,6 +32,7 @@ public class ViewHolderPage extends RecyclerView.ViewHolder {
         menuName.setText(data.getMenuName());
         cafeName.setText(data.getCafeName());
         image.setImageResource(data.getImage());
-        price.setText(Integer.toString(data.getPrice()).concat("원"));
+        price.setText(data.getPrice().concat("원"));
     }
+
 }

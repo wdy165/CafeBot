@@ -4,18 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.TextUtils;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import javax.mail.MessagingException;
 import javax.mail.SendFailedException;
@@ -32,9 +26,6 @@ public class QnaActivity extends AppCompatActivity {
     private String user = ""; // 보내는 사람의 이메일 주소
     private String pwd = ""; // 보내는 사람의 이메일 비밀번호
 
-    // 바텀네비게이션뷰
-    private BottomNavigationView bottomNav;
-    private FragmentManager fragmentManager = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +36,6 @@ public class QnaActivity extends AppCompatActivity {
 
         submitButton(); // 전송 버튼 이벤트 처리
 
-        // 바텀네비게이션
-        bottomNav = findViewById(R.id.navigationView);
-        bottomNav.setOnNavigationItemSelectedListener(new QnaActivity.ItemSelectedListener());
     }
 
     // 인터넷 권한 허용
@@ -62,7 +50,7 @@ public class QnaActivity extends AppCompatActivity {
     public String[] setInput() {
         title = (EditText) findViewById(R.id.em_title);
         message = (EditText) findViewById(R.id.em_msg);
-        addr = (EditText) findViewById(R.id.em_address);
+        addr = (EditText) findViewById(R.id.em_addr);
 
         String tt = title.getText().toString();
         String msg = message.getText().toString();
@@ -104,32 +92,6 @@ public class QnaActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-    //바텀네비
-    class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-            switch (menuItem.getItemId()) {
-                case R.id.searchItem:
-                    Intent intent1 = new Intent(getApplicationContext(), com.example.myapplication.SearchActivity.class);
-                    startActivity(intent1);
-                    //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
-                    break;
-                case R.id.homeItem:
-                    Intent intent2 = new Intent(getApplicationContext(), com.example.myapplication.MainActivity.class);
-                    startActivity(intent2);
-                    //transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
-                    break;
-                case R.id.cafeItem:
-                    Intent intent3 = new Intent(getApplicationContext(), com.example.myapplication.MainCflistActivity.class);
-                    startActivity(intent3);
-                    //transaction.replace(R.id.frameLayout, fragmentCafe).commitAllowingStateLoss();
-                    break;
-            }
-            return true;
-        }
     }
 
 }

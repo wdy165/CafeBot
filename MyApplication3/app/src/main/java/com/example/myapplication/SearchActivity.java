@@ -15,10 +15,13 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,23 +47,18 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         // 검색창 구현
-        list = new ArrayList<String>();
+        //list = new ArrayList<>();
 
         // 단어 추가
         settingList();
 
-        AutoCompleteTextView edit = (AutoCompleteTextView) findViewById(R.id.edit);
+        autoView = (AutoCompleteTextView) findViewById(R.id.edit);
 
-        edit.setAdapter(new ArrayAdapter<String>(this,
+        autoView.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, list));
 
         // 검색 버튼
         initSearchButton();
-
-        // 인텐트로 값 전달
-        //autoView = (AutoCompleteTextView) findViewById(R.id.edit);
-        //Intent dataIntent = new Intent(this, ResultActivity.class);
-        //dataIntent.putExtra(dataIntent, )
 
        // 바텀네비게이션
         bottomNav = findViewById(R.id.navigationView);
@@ -69,26 +67,37 @@ public class SearchActivity extends AppCompatActivity {
 
     public void settingList(){
         // 검색창
-        list.add("아메리카노");
-        list.add("카페라떼");
-        list.add("에스프레소");
-        list.add("카라멜마끼아또");
-        list.add("와플");
-        list.add("크로와상");
-        list.add("딸기스무디");
-        list.add("스무디");
-        list.add("요거트스무디");
-        list.add("프라페");
-        list.add("오레오프라페");
-        list.add("초코프라페");
-        list.add("콜드브루 아메리카노");
-        list.add("아이스티");
-        list.add("복숭아아이스티");
-        list.add("케익");
-        list.add("베이글");
-        list.add("치즈베이글");
-        list.add("스콘");
+        InputStream is = this.getResources().openRawResource(R.raw.datatest);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        List<List<String>> ret = new ArrayList<List<String>>();
 
+        list = new ArrayList<String>();
+        try {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // do something with "line"
+                List<String> tmpList = new ArrayList<String>();
+                String array[] = line.split(",");
+                list.add(array[1]);
+                //배열에서 리스트 반환
+//                tmpList = Arrays.asList(array);
+//                System.out.println(tmpList);
+//                ret.add(tmpList);
+
+            }
+
+        }
+        catch (IOException ex) {
+            // handle exception
+        }
+        finally {
+            try {
+                is.close();
+            }
+            catch (IOException e) {
+                // handle exception
+            }
+        }
 
 /*
         String[] items = {"아메리카노", "카페라떼", "에스프레소", "카라멜마끼아또", "와플", "크로와상", "스무디",
