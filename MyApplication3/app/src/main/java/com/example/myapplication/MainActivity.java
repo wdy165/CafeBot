@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -35,7 +36,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+<<<<<<< HEAD
+import java.util.Collections;
+=======
 import java.util.Arrays;
+>>>>>>> brchWDY
 import java.util.List;
 import java.util.Random;
 
@@ -161,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
 
     // 메뉴 리스트
     public ArrayList<DataPage> randomMenu() {
+<<<<<<< HEAD
+        InputStream is = this.getResources().openRawResource(R.raw.datatest);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.all_menu);
+=======
 
         InputStream is = this.getResources().openRawResource(R.raw.datatest);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -191,7 +201,31 @@ public class MainActivity extends AppCompatActivity {
                 // handle exception
             }
         }
+>>>>>>> brchWDY
 
+        list = new ArrayList<>();
+        int i = 0;
+        try {
+            String line;
+            while ((line = reader.readLine()) != null && (i < typedArray.length())) {
+                // do something with "line"
+                String array[] = line.split(",");
+
+                list.add(new DataPage(typedArray.getResourceId(i, -1), array[0], array[1], array[2], Integer.parseInt(array[3])));
+                i++;
+            }
+        }
+        catch (IOException ex) {
+            // handle exception
+        }
+        finally {
+            try {
+                is.close();
+            }
+            catch (IOException e) {
+                // handle exception
+            }
+        }
         return list;
 
 

@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ViewHolderPage extends RecyclerView.ViewHolder {
 
-    private ConstraintLayout layout;
     private ImageView image;
     private TextView cafeName;
     private TextView menuName;
@@ -20,7 +19,6 @@ public class ViewHolderPage extends RecyclerView.ViewHolder {
     ViewHolderPage(View itemView) {
         super(itemView);
         cafeName = itemView.findViewById(R.id.cafe_name);
-        layout = itemView.findViewById(R.id.layout);
         image = itemView.findViewById(R.id.sample_image);
         price = itemView.findViewById(R.id.product_price);
         menuName = itemView.findViewById(R.id.menu_name);

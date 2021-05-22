@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -66,16 +67,30 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void settingList(){
+<<<<<<< HEAD
+        InputStream is = this.getResources().openRawResource(R.raw.datatest);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+
+        list = new ArrayList<>();
+
+=======
         // 검색창
         InputStream is = this.getResources().openRawResource(R.raw.datatest);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         List<List<String>> ret = new ArrayList<List<String>>();
 
         list = new ArrayList<String>();
+>>>>>>> brchWDY
         try {
             String line;
             while ((line = reader.readLine()) != null) {
                 // do something with "line"
+<<<<<<< HEAD
+                String array[] = line.split(",");
+
+                list.add(array[0]);
+            }
+=======
                 List<String> tmpList = new ArrayList<String>();
                 String array[] = line.split(",");
                 list.add(array[1]);
@@ -86,6 +101,7 @@ public class SearchActivity extends AppCompatActivity {
 
             }
 
+>>>>>>> brchWDY
         }
         catch (IOException ex) {
             // handle exception
@@ -98,12 +114,15 @@ public class SearchActivity extends AppCompatActivity {
                 // handle exception
             }
         }
+<<<<<<< HEAD
+=======
 
 /*
         String[] items = {"아메리카노", "카페라떼", "에스프레소", "카라멜마끼아또", "와플", "크로와상", "스무디",
         "딸기스무디", "요거트스무디", "요거트", "프라페", "오레오프라페", "초코프라페", "콜드브루 아메리카노",
         "아이스티", "복숭아아이스티", "케익", "베이글", "치즈베이글", "스콘"};
 */
+>>>>>>> brchWDY
     }
 
     public void initSearchButton(){

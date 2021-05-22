@@ -19,6 +19,7 @@
     </string>
     <string name="result_text1">검색어 없음</string>
     <string name="result_text2">을/를 검색(선택)한 결과</string>
+    <string name="categoryresult_text">선택한 카테고리</string>
     <string name="refresh">메뉴 변경</string>
     <string name="list_num">순서</string>
     <string name="slash">/</string>

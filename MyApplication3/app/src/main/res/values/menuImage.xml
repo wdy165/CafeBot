@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name = "all_menu">
+        <item>@drawable/star_coldbrew</item>
+        <item>@drawable/star_icecoffee</item>
+        <item>@drawable/star_todaycoffee</item>
+        <item>@drawable/star_icecafeamericano</item>
+        <item>@drawable/star_cafeamericano</item>
+        <item>@drawable/star_espresso</item>
+        <item>@drawable/star_nightrovanillacream</item>
+        <item>@drawable/star_velvetdarkmocanightro</item>
+        <item>@drawable/star_forestcoldbrew</item>
+        <item>@drawable/star_frenchapplenightro</item>
+    </array>
+</resources>

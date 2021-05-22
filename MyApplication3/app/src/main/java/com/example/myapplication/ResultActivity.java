@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -14,6 +15,10 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ResultActivity extends AppCompatActivity {
@@ -53,7 +58,38 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     private void viewpage(){
+        InputStream is = this.getResources().openRawResource(R.raw.datatest);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.all_menu);
+
         list = new ArrayList<>();
+<<<<<<< HEAD
+        int i = 0;
+        try {
+            String line;
+            while ((line = reader.readLine()) != null && (i < typedArray.length())) {
+                // do something with "line"
+                String array[] = line.split(",");
+
+                list.add(new DataPage(typedArray.getResourceId(i, -1), array[0], array[1], array[2], Integer.parseInt(array[3])));
+                i++;
+            }
+        }
+        catch (IOException ex) {
+            // handle exception
+        }
+        finally {
+            try {
+                is.close();
+            }
+            catch (IOException e) {
+                // handle exception
+            }
+        }
+
+        resultCur = (TextView) findViewById(R.id.resultCurNum);
+        resultNum = (TextView) findViewById(R.id.resultSumNum);
+=======
         list.add(new DataPage(R.drawable.sample_1, "아메리카노","스타벅스", "4900"));
         list.add(new DataPage(R.drawable.sample_2, "아메리카노","투썸플레이스", "4100"));
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","이디야커피", "3000"));
@@ -64,6 +100,7 @@ public class ResultActivity extends AppCompatActivity {
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", "3000"));
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", "3000"));
         list.add(new DataPage(R.drawable.sample_3, "아메리카노","EDIYA", "3000"));
+>>>>>>> brchWDY
 
         result_ViewPager2 = findViewById(R.id.resultViewPager2);
         result_ViewPager2.setAdapter(new ViewPagerAdapter(list));

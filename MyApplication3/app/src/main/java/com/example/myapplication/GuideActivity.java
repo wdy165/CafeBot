@@ -17,7 +17,7 @@ public class GuideActivity extends Activity {
 
         startLoading();
     }
-//가이드라인 레이아웃 실핼
+//가이드라인 레이아웃 실행
 
     private void startLoading() {
 

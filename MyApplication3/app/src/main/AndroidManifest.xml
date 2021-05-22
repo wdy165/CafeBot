@@ -34,10 +34,16 @@
 
         <activity android:name=".MainCflistActivity"/>
         <activity android:name=".SearchActivity" />
+<<<<<<< HEAD
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".CategoryResultActivity" />
+        <activity android:name=".QnaActivity" />
+=======
         <activity android:name=".ResultActivity"/>
         <activity android:name=".QnaActivity"/>
 
 
+>>>>>>> brchWDY
     </application>
 
 <!--    // 인터넷 접근 권한 허용-->
