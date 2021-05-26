@@ -33,7 +33,7 @@ public class CategoryResultActivity extends AppCompatActivity {
     // 가운데
     private ViewPager2 result_ViewPager2;
     private ViewPagerAdapter pageNum;
-    private ArrayList<DataPage> list;
+    private ArrayList<DataPage> list, newList;
     private TextView resultNum, resultCur;
 
     // 바텀네비게이션뷰
@@ -52,7 +52,7 @@ public class CategoryResultActivity extends AppCompatActivity {
         // 텍스트 검색결과값 가져오기
         this.findSearchDataValue();
 
-        // 뷰페이저 (메뉴검색결과값)
+        // 뷰페이저 (카테고리검색결과값)
         this.viewpage();
 
         // 바텀네비게이션
@@ -102,7 +102,6 @@ public class CategoryResultActivity extends AppCompatActivity {
             Collections.sort(list);
             Collections.reverse(list);
         }
-
         result_ViewPager2.setAdapter(new ViewPagerAdapter(list));
     }
 
@@ -114,16 +113,18 @@ public class CategoryResultActivity extends AppCompatActivity {
         resultText.setText(keyword);
     }
 
+    // 메뉴 리스트
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    private void viewpage(){
+    public void viewpage() {
         Intent dataIntent = getIntent();
         String keyword;
 
-        InputStream is = this.getResources().openRawResource(R.raw.datatest);
+        InputStream is = this.getResources().openRawResource(R.raw.cafe_data);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         TypedArray typedArray = getResources().obtainTypedArray(R.array.all_menu);
 
         list = new ArrayList<>();
+        newList = new ArrayList<>();
         int i = 0;
 
         // 카테고리 데이터값 가져오기
@@ -132,15 +133,16 @@ public class CategoryResultActivity extends AppCompatActivity {
         resultText.setText(keyword);
         try {
             String line;
-            String categoryText = (String)resultText.getText();
             while ((line = reader.readLine()) != null && (i < typedArray.length())) {
                 // do something with "line"
                 String array[] = line.split(",");
 
-                if(Objects.equals(categoryText, array[2])) {
-                    list.add(new DataPage(typedArray.getResourceId(i, -1), array[0], array[1], array[2], Integer.parseInt(array[3])));
-                    i++;
+                //list.add(new DataPage(typedArray.getResourceId(i, -1), array[0], array[1], array[2], Integer.parseInt(array[3])));
+
+                if(Objects.equals(keyword, array[2])){
+                    newList.add(new DataPage(typedArray.getResourceId(i, -1), array[0], array[1], array[2], Integer.parseInt(array[3])));
                 }
+                i++;
             }
         }
         catch (IOException ex) {
@@ -154,15 +156,14 @@ public class CategoryResultActivity extends AppCompatActivity {
                 // handle exception
             }
         }
-
         resultCur = (TextView) findViewById(R.id.resultCurNum);
         resultNum = (TextView) findViewById(R.id.resultSumNum);
 
         result_ViewPager2 = findViewById(R.id.resultViewPager2);
-        result_ViewPager2.setAdapter(new ViewPagerAdapter(list));
+        result_ViewPager2.setAdapter(new ViewPagerAdapter(newList));
 
         // 총 페이지 숫자
-        pageNum = new ViewPagerAdapter(list);
+        pageNum = new ViewPagerAdapter(newList);
         int sumNum = pageNum.getItemCount();
         resultNum.setText(String.valueOf(sumNum));
         resultCur.setText(String.valueOf(1)); // 초기값 1

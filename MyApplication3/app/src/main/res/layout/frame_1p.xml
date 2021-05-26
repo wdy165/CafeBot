@@ -45,7 +45,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="110dp"
             android:layout_marginEnd="31dp"
             android:layout_marginRight="31dp"
             android:layout_marginBottom="0dp"
@@ -90,15 +90,15 @@
             android:layout_width="115dp"
             android:layout_height="122dp"
             android:layout_below="@id/img_logo"
-            android:layout_alignStart="@+id/cbay"
-            android:layout_alignLeft="@+id/cbay"
+
+
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="238dp"
-            android:layout_marginLeft="238dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp"
+            android:layout_marginStart="215dp"
+            android:layout_marginLeft="215dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:background="@drawable/tomntoms" />
 
         <ImageView
@@ -135,22 +135,6 @@
             android:background="@drawable/paik" />
 
         <ImageView
-            android:id="@+id/compose"
-            android:layout_width="wrap_content"
-            android:layout_height="118dp"
-            android:layout_below="@id/img_logo"
-            android:layout_alignStart="@+id/img_rect"
-            android:layout_alignLeft="@+id/img_rect"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="229dp"
-            android:layout_marginLeft="229dp"
-            android:layout_marginTop="142dp"
-            android:layout_marginEnd="33dp"
-            android:layout_marginRight="33dp"
-            android:background="@drawable/compose" />
-
-        <ImageView
             android:id="@+id/ediya"
             android:layout_width="113dp"
             android:layout_height="114dp"
@@ -166,21 +150,6 @@
             android:layout_marginRight="229dp"
             android:background="@drawable/ediya" />
 
-        <ImageView
-            android:id="@+id/venti"
-            android:layout_width="117dp"
-            android:layout_height="115dp"
-            android:layout_below="@id/img_logo"
-            android:layout_alignStart="@+id/ediya"
-            android:layout_alignLeft="@+id/ediya"
-            android:layout_alignEnd="@+id/pas"
-            android:layout_alignRight="@+id/pas"
-            android:layout_marginStart="116dp"
-            android:layout_marginLeft="116dp"
-            android:layout_marginTop="267dp"
-            android:layout_marginEnd="108dp"
-            android:layout_marginRight="108dp"
-            android:background="@drawable/theventi" />
 
         <ImageView
             android:id="@+id/pas"
@@ -191,10 +160,40 @@
             android:layout_alignParentRight="true"
             android:layout_marginStart="237dp"
             android:layout_marginLeft="237dp"
-            android:layout_marginTop="264dp"
-            android:layout_marginEnd="37dp"
-            android:layout_marginRight="37dp"
+            android:layout_marginTop="142dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginRight="33dp"
             android:background="@drawable/pascucci" />
+
+        <ImageView
+            android:id="@+id/cbay"
+            android:layout_width="wrap_content"
+            android:layout_height="115dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignStart="@+id/img_rect"
+            android:layout_alignLeft="@+id/img_rect"
+            android:layout_alignEnd="@+id/img_rect"
+            android:layout_alignRight="@+id/img_rect"
+            android:layout_marginStart="120dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="265dp"
+            android:layout_marginEnd="115dp"
+            android:layout_marginRight="115dp"
+            android:background="@drawable/coffeebay" />
+
+        <ImageView
+            android:id="@+id/holly"
+            android:layout_width="109dp"
+            android:layout_height="115dp"
+            android:layout_below="@id/img_logo"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="237dp"
+            android:layout_marginLeft="237dp"
+            android:layout_marginTop="268dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginRight="33dp"
+            android:background="@drawable/hollys" />
 
         <ImageView
             android:id="@+id/next_btn"

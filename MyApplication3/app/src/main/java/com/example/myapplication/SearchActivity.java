@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -48,60 +49,38 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         // 검색창 구현
-        //list = new ArrayList<>();
+        list = new ArrayList<String>();
 
         // 단어 추가
         settingList();
 
-        autoView = (AutoCompleteTextView) findViewById(R.id.edit);
+        AutoCompleteTextView edit = (AutoCompleteTextView) findViewById(R.id.edit);
 
-        autoView.setAdapter(new ArrayAdapter<>(this,
+        edit.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, list));
 
         // 검색 버튼
         initSearchButton();
 
-       // 바텀네비게이션
+        // 바텀네비게이션
         bottomNav = findViewById(R.id.navigationView);
         bottomNav.setOnNavigationItemSelectedListener(new SearchActivity.ItemSelectedListener());
     }
 
     public void settingList(){
-<<<<<<< HEAD
-        InputStream is = this.getResources().openRawResource(R.raw.datatest);
+        InputStream is = this.getResources().openRawResource(R.raw.cafe_data);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
         list = new ArrayList<>();
 
-=======
-        // 검색창
-        InputStream is = this.getResources().openRawResource(R.raw.datatest);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        List<List<String>> ret = new ArrayList<List<String>>();
-
-        list = new ArrayList<String>();
->>>>>>> brchWDY
         try {
             String line;
             while ((line = reader.readLine()) != null) {
                 // do something with "line"
-<<<<<<< HEAD
                 String array[] = line.split(",");
 
                 list.add(array[0]);
             }
-=======
-                List<String> tmpList = new ArrayList<String>();
-                String array[] = line.split(",");
-                list.add(array[1]);
-                //배열에서 리스트 반환
-//                tmpList = Arrays.asList(array);
-//                System.out.println(tmpList);
-//                ret.add(tmpList);
-
-            }
-
->>>>>>> brchWDY
         }
         catch (IOException ex) {
             // handle exception
@@ -114,15 +93,6 @@ public class SearchActivity extends AppCompatActivity {
                 // handle exception
             }
         }
-<<<<<<< HEAD
-=======
-
-/*
-        String[] items = {"아메리카노", "카페라떼", "에스프레소", "카라멜마끼아또", "와플", "크로와상", "스무디",
-        "딸기스무디", "요거트스무디", "요거트", "프라페", "오레오프라페", "초코프라페", "콜드브루 아메리카노",
-        "아이스티", "복숭아아이스티", "케익", "베이글", "치즈베이글", "스콘"};
-*/
->>>>>>> brchWDY
     }
 
     public void initSearchButton(){
