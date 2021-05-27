@@ -89,9 +89,17 @@ public class MapActivity extends AppCompatActivity
 
     List<Marker> previous_marker = null;
 
+    // 중요. 카페 이름 변수
+    String cafeName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 중요. 카페 이름 가져오기
+        Intent intent = getIntent();
+        cafeName = intent.getExtras().getString("cafeName");
+
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -379,8 +387,8 @@ public class MapActivity extends AppCompatActivity
                     .listener(MapActivity.this)
                     .key("AIzaSyAYZ0vDsEFeqGHm9HD0KsnDJjZTtRbunsI")
                     .latlng(currentPosition.latitude, currentPosition.longitude)//현재 위치
-                    .radius(5000) //500 미터 내에서 검색
-                    .name("투썸플레이스")
+                    .radius(5000) //5000 미터 내에서 검색
+                    .name(cafeName) //중요. 카페 이름으로 주변 카페 찾기
                     .build()
                     .execute();
         }

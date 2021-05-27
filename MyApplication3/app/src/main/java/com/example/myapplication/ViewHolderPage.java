@@ -32,4 +32,6 @@ public class ViewHolderPage extends RecyclerView.ViewHolder {
         image.setImageResource(data.getImage());
         price.setText(Integer.toString(data.getPrice()).concat("원"));
     }
+
+
 }
