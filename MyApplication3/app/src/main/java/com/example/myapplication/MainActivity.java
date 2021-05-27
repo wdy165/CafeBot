@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -84,6 +85,15 @@ public class MainActivity extends AppCompatActivity {
         //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
         // 바텀네비게이션
 
+    }
+
+    public void cafeSearch(View v){
+        EditText editText = (EditText)findViewById(R.id.editText);
+        String str = editText.getText().toString();
+
+        Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+        intent.putExtra("cafeName", str);
+        startActivity(intent);
     }
 
     //툴바
