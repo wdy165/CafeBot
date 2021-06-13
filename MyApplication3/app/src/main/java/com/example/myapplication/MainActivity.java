@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import androidx.fragment.app.FragmentManager;
@@ -56,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
     // 바텀네비게이션뷰
     private BottomNavigationView bottomNav;
     private FragmentManager fragmentManager = getSupportFragmentManager();
-    private SearchPage fragmentSearch = new SearchPage();
-    private HomePage fragmentHome = new HomePage();
-    private CafePage fragmentCafe = new CafePage();
 
     // 필터 체크표시를 확인하고 저장하기 위한 변수
     private int state = 0;
@@ -68,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     private int categoryState = 0;
     private int subcategoryState = 0;
 
+    private ViewPagerAdapter viewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,20 +81,16 @@ public class MainActivity extends AppCompatActivity {
 
         this.viewpage(randomMenu()); // 뷰페이저
 
-        //FragmentTransaction transaction = fragmentManager.beginTransaction();
-        //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
-        // 바텀네비게이션
-
     }
 
-    public void cafeSearch(View v){
+    /*public void cafeSearch(View v){
         EditText editText = (EditText)findViewById(R.id.editText);
         String str = editText.getText().toString();
 
         Intent intent = new Intent(getApplicationContext(), MapActivity.class);
         intent.putExtra("cafeName", str);
         startActivity(intent);
-    }
+    }*/
 
     //툴바
     private void InitializeLayout() {
@@ -292,7 +288,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_guide:
-
                 Intent intent5 = new Intent(getApplicationContext(), com.example.myapplication.GuideActivity.class);
                 startActivity(intent5);
                 return true;
@@ -301,9 +296,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent6 = new Intent(getApplicationContext(), com.example.myapplication.QnaActivity.class);
                 startActivity(intent6);
                 return true;
-            //qna맥티비티 실행
+                // 지도 액티비티 실행
+            case R.id.action_map:
+                Intent intent7 = new Intent(getApplicationContext(), com.example.myapplication.MapActivity.class);
+                startActivity(intent7);
+                return true;
+            //qna 액티비티 실행
             case R.id.action_made:
-                ((TextView) findViewById(R.id.textView)).setText("제작");
+                ((TextView) findViewById(R.id.textView)).setText("제작자");
 
                 Toast myToast = Toast.makeText(this.getApplicationContext(), R.string.madeby, Toast.LENGTH_SHORT);
                 myToast.show();

@@ -29,7 +29,8 @@
                 android:fontFamily="@font/bmjua"
                 android:textColor="@color/white"
                 android:textSize="23sp"
-                app:layout_constraintBottom_toTopOf="@+id/resultText2"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/resultViewPager2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
@@ -37,12 +38,11 @@
                 android:id="@+id/resultText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/result_text2"
+                android:text="@string/categoryresult_text"
                 android:fontFamily="@font/bmjua"
                 android:textColor="@color/black"
                 android:textSize="23sp"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/resultViewPager2"
+                app:layout_constraintBottom_toTopOf="@+id/resultText1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -66,6 +66,7 @@
                 android:layout_marginEnd="25dp"
                 android:layout_marginRight="40dp"
                 android:text="@string/filter"
+                android:fontFamily="@font/bmjua"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/resultFilterButton" />
@@ -116,25 +117,25 @@
                 app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <!--
-                        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-                            android:id="@+id/dots_indicator"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="40dp"
-                            app:dotsColor="@color/white"
-                            app:dotsCornerRadius="8dp"
-                            app:dotsSize="14dp"
-                            app:dotsSpacing="4dp"
-                            app:dotsWidthFactor="2.5"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.498"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:progressMode="true"
-                            app:selectedDotColor="@color/black" />
-                            -->
+<!--
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:dotsColor="@color/white"
+                app:dotsCornerRadius="8dp"
+                app:dotsSize="14dp"
+                app:dotsSpacing="4dp"
+                app:dotsWidthFactor="2.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:progressMode="true"
+                app:selectedDotColor="@color/black" />
+                -->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

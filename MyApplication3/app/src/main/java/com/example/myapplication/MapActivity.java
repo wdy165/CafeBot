@@ -5,6 +5,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -17,9 +19,11 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -37,7 +41,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,6 +62,9 @@ public class MapActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback, PlacesListener {
 
+    // 바텀네비게이션뷰
+    private BottomNavigationView bottomNav;
+    private FragmentManager fragmentManager = getSupportFragmentManager();
 
     int countCheck = 1;
     private GoogleMap mMap;
@@ -69,6 +79,7 @@ public class MapActivity extends AppCompatActivity
     // onRequestPermissionsResult에서 수신된 결과에서 ActivityCompat.requestPermissions를 사용한 퍼미션 요청을 구별하기 위해 사용됩니다.
     private static final int PERMISSIONS_REQUEST_CODE = 100;
     boolean needRequest = false;
+    boolean mMoveMapByAPI = true;
 
 
     // 앱을 실행하기 위해 필요한 퍼미션을 정의합니다.
@@ -95,16 +106,19 @@ public class MapActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_map);
         // 중요. 카페 이름 가져오기
         Intent intent = getIntent();
-        cafeName = intent.getExtras().getString("cafeName");
+        cafeName = intent.getStringExtra("cafeName");
 
+        TextView cafeText = (TextView) findViewById(R.id.mapResultText);
+        if(cafeName != null){
+            cafeText.setText("주변 " + cafeName + " " + "찾기");
+        }
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        setContentView(R.layout.activity_map);
 
         previous_marker = new ArrayList<Marker>();
 
@@ -128,6 +142,10 @@ public class MapActivity extends AppCompatActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        // 바텀네비게이션
+        bottomNav = findViewById(R.id.navigationView);
+        bottomNav.setOnNavigationItemSelectedListener(new ItemSelectedListener());
     }
 
     @Override
@@ -139,8 +157,6 @@ public class MapActivity extends AppCompatActivity
         //런타임 퍼미션 요청 대화상자나 GPS 활성 요청 대화상자 보이기전에
         //지도의 초기위치를 서울로 이동
         setDefaultLocation();
-
-
 
         //런타임 퍼미션 처리
         // 1. 위치 퍼미션을 가지고 있는지 체크합니다.
@@ -606,5 +622,31 @@ public class MapActivity extends AppCompatActivity
     @Override
     public void onPlacesFinished() {
 
+    }
+    //바텀네비
+    class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+            switch (menuItem.getItemId()) {
+                case R.id.searchItem:
+                    Intent intent1 = new Intent(getApplicationContext(), com.example.myapplication.SearchActivity.class);
+                    startActivity(intent1);
+                    //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
+                    break;
+                case R.id.homeItem:
+                    Intent intent2 = new Intent(getApplicationContext(), com.example.myapplication.MainActivity.class);
+                    startActivity(intent2);
+                    //transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
+                    break;
+                case R.id.cafeItem:
+                    Intent intent3 = new Intent(getApplicationContext(), com.example.myapplication.MainCflistActivity.class);
+                    startActivity(intent3);
+                    //transaction.replace(R.id.frameLayout, fragmentCafe).commitAllowingStateLoss();
+                    break;
+            }
+            return true;
+        }
     }
 }

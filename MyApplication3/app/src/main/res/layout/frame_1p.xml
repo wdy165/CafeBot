@@ -6,6 +6,7 @@
     android:background="@color/cfb">
 
     <RelativeLayout
+        android:id="@+id/frag_layout"
         android:layout_width="match_parent"
         android:layout_height="490dp">
 
@@ -29,6 +30,7 @@
             android:layout_marginTop="32dp"
             android:layout_toRightOf="@+id/img_logo"
             android:text="Cafe List"
+            android:fontFamily="@font/bmjua"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold" />

@@ -17,12 +17,17 @@
             android:id="@+id/espresso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category_Espresso" />
+            android:checked="true"
+            android:fontFamily="@font/bmjua"
+            android:text="@string/category_Espresso"
+            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/coldbrew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category_coldbrew" />
+            android:text="@string/category_coldbrew"
+            android:fontFamily="@font/bmjua"
+            android:textColor="@color/black"/>
     </RadioGroup>
 </FrameLayout>

@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="#4D472A77"
+        android:background="@color/cfb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,7 +26,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Starbucks"
-            android:layout_marginRight="210dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="251dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +40,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/coffeebean"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +53,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tomntoms"
-            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="39dp"
             app:layout_constraintLeft_toRightOf="@+id/cb2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,7 +65,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Angel"
-            android:layout_marginRight="200dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginRight="235dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb1" />
@@ -64,6 +78,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/paik"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb2" />
@@ -73,7 +91,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/EDIYA"
-            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="39dp"
             app:layout_constraintLeft_toRightOf="@+id/cb5"
             app:layout_constraintTop_toBottomOf="@+id/cb3"/>
 
@@ -82,7 +103,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pascucci"
-            android:layout_marginRight="210dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginRight="248dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb4" />
@@ -92,6 +116,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/coffeebay"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginRight="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb5" />
@@ -101,7 +129,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hollys"
-            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="25dp"
             app:layout_constraintLeft_toRightOf="@+id/cb8"
             app:layout_constraintTop_toBottomOf="@+id/cb6" />
 
@@ -110,7 +141,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/gongcha"
-            android:layout_marginRight="240dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginRight="280dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb7" />
@@ -120,6 +154,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mega"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginRight="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb8" />
@@ -129,7 +167,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/caffebene"
-            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="25dp"
             app:layout_constraintLeft_toRightOf="@+id/cb11"
             app:layout_constraintTop_toBottomOf="@+id/cb9" />
 
@@ -138,7 +179,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yoger"
-            android:layout_marginRight="130dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginRight="155dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cb10" />
@@ -148,7 +192,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/twosome"
-            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="30dp"
             app:layout_constraintLeft_toRightOf="@+id/cb13"
             app:layout_constraintTop_toBottomOf="@+id/cb12" />
 
@@ -167,22 +214,32 @@
             android:id="@+id/sortHigh2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/filter_high" />
+            android:text="@string/filter_high"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
 
         <RadioButton
             android:id="@+id/sortLow2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/filter_low" />
+            android:text="@string/filter_low"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/bmjua"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
 
     </RadioGroup>
 
     <Button
         android:id="@+id/goback2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="goback"
         android:text="@string/goback"
+        android:fontFamily="@font/bmjua"
+        android:textColor="@color/black"
+        android:background="@color/teal_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />

@@ -57,17 +57,27 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
         categoryState = intent.getExtras().getInt("categoryState");
         subcategoryState = intent.getExtras().getInt("subcategoryState");
 
+        textView.setText("카페인");
+        subcategoryState = 5;
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.fragment_container, fragmentCaffeine);
+        transaction.commit();
+
         switch (categoryState){
             case 1 :
                 caffeine.setChecked(true);
+                subcategoryState = 5;
                 textView.setText("카페인");
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction = getSupportFragmentManager().beginTransaction();
                 Bundle bundle = new Bundle();
                 bundle.putInt("subcategoryState", subcategoryState);
                 fragmentCaffeine.setArguments(bundle);
 
                 transaction.replace(R.id.fragment_container, fragmentCaffeine);
                 transaction.commit();
+
                 break;
             case 2 :
                 decaffeine.setChecked(true);
@@ -77,6 +87,7 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
                 break;
             case 4 :
                 blended.setChecked(true);
+                subcategoryState = 1;
                 textView.setText("블렌디드");
                 FragmentTransaction transaction2 = getSupportFragmentManager().beginTransaction();
                 Bundle bundle2 = new Bundle();
@@ -85,6 +96,7 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
 
                 transaction2.replace(R.id.fragment_container, fragmentBlended);
                 transaction2.commit();
+
                 break;
             case 5 :
                 yogurt.setChecked(true);
@@ -116,6 +128,7 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
 
     public void selectCaffeine(View v){
         textView.setText("카페인");
+        subcategoryState = 5;
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         transaction.replace(R.id.fragment_container, fragmentCaffeine);
@@ -124,6 +137,7 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
 
     public void selectBlended(View v){
         textView.setText("블렌디드");
+        subcategoryState = 1;
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         transaction.replace(R.id.fragment_container, fragmentBlended);
@@ -172,34 +186,36 @@ public class DrinkMenu extends AppCompatActivity implements OnTimePickerSetListe
                 break;
         }
 
-        if(subcategoryState == 1){
-            categoryName = "프라페";
-            intent.putExtra("카테고리명", categoryName);
+        if(categoryState == 1 | categoryState == 4){
+            if(subcategoryState == 1){
+                categoryName = "프라페";
+                intent.putExtra("카테고리명", categoryName);
+            }
+            else if(subcategoryState == 2){
+                categoryName = "쉐이크";
+                intent.putExtra("카테고리명", categoryName);
+            }
+            else if(subcategoryState == 3){
+                categoryName = "스무디";
+                intent.putExtra("카테고리명", categoryName);
+            }
+            else if(subcategoryState == 4){
+                categoryName = "과일주스";
+                intent.putExtra("카테고리명", categoryName);
+            }
+            else if(subcategoryState == 5){
+                categoryName = "에스프레소&라떼";
+                intent.putExtra("카테고리명", categoryName);
+            }else if(subcategoryState == 6){
+                categoryName = "콜드브루";
+                intent.putExtra("카테고리명", categoryName);
+            }
         }
-        else if(subcategoryState == 2){
-            categoryName = "쉐이크";
-            intent.putExtra("카테고리명", categoryName);
-        }
-        else if(subcategoryState == 3){
-            categoryName = "스무디";
-            intent.putExtra("카테고리명", categoryName);
-        }
-        else if(subcategoryState == 4){
-            categoryName = "과일주스";
-            intent.putExtra("카테고리명", categoryName);
-        }
-        else if(subcategoryState == 5){
-            categoryName = "에스프레소&라떼";
-            intent.putExtra("카테고리명", categoryName);
-        }else if(subcategoryState == 6){
-            categoryName = "콜드브루";
-            intent.putExtra("카테고리명", categoryName);
-        }
+
         intent.putExtra("categoryState", categoryState);
         intent.putExtra("subcategoryState", subcategoryState);
         setResult(categoryState, intent);
         startActivity(intent);
         finish();
-
     }
 }

@@ -2,21 +2,28 @@
 
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@drawable/mainguide"
-    android:orientation="vertical">
+    android:background="@drawable/mainguideline"
+    android:orientation="vertical"
+    >
+
 
     <Button
         android:id="@+id/close"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="630dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="550dp"
         android:width="256px"
         android:height="40px"
         android:text="닫  기"
-        android:textColor="#fff"
+        android:fontFamily="@font/bmjua"
+        android:textColor="@color/black"
         android:textSize="16dp"
         android:gravity="center"
-        android:background="@color/teal_700"/>
+        android:background="@color/teal_200"/>
+
+
+
+
 
 </LinearLayout>

@@ -7,12 +7,45 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <fragment
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="0.8"
+        android:layout_marginVertical="30dp"
         android:id="@+id/map"
         tools:context=".MapsActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+        <TextView
+            android:id="@+id/mapResultText"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="23dp"
+            android:text="주변 카페 찾기"
+            android:fontFamily="@font/bmjua"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:background="@color/bgc"
+            tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@drawable/bottom_icon_color"
+        app:itemTextColor="@drawable/bottom_icon_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:menu="@menu/bottom_nav" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

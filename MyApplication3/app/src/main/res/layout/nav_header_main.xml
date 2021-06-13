@@ -6,7 +6,11 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+
+
+
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,21 +35,23 @@
             android:gravity="center"
             android:textSize="@dimen/nav_header_title"
             android:textColor="@color/black"
-            android:text="@string/nav_header_menu" />
+            android:text="@string/nav_header_menu"
+            android:fontFamily="@font/bmjua"/>
     </LinearLayout>
-        <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/side_nav_bar_white"
         android:gravity="left|center"
         android:orientation="vertical">
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="@dimen/nav_header_subtitle"
-                android:textColor="@color/black"
-                android:text="카테고리" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="@dimen/nav_header_subtitle"
+            android:textColor="@color/black"
+            android:text="카테고리"
+            android:fontFamily="@font/bmjua"/>
     </LinearLayout>
 </LinearLayout>
