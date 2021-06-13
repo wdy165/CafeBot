@@ -296,7 +296,11 @@ public class CategoryResultActivity extends AppCompatActivity {
         // 카테고리 데이터값 가져오기
         keyword = dataIntent.getStringExtra("카테고리명");
         resultText = (TextView) findViewById(R.id.resultText1);
-        resultText.setText(keyword);
+        if(keyword.equals("케잌")){
+            resultText.setText("케이크");
+        }else {
+            resultText.setText(keyword);
+        }
         try {
             String line;
             while ((line = reader.readLine()) != null && (i < typedArray.length())) {

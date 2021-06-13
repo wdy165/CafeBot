@@ -81,6 +81,7 @@ public class MapActivity extends AppCompatActivity
     boolean needRequest = false;
     boolean mMoveMapByAPI = true;
 
+    public String CAFE = "cafe";
 
     // 앱을 실행하기 위해 필요한 퍼미션을 정의합니다.
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};  // 외부 저장소
@@ -399,14 +400,26 @@ public class MapActivity extends AppCompatActivity
             if (previous_marker != null)
                 previous_marker.clear();//지역정보 마커 클리어
 
-            new NRPlaces.Builder()
-                    .listener(MapActivity.this)
-                    .key("AIzaSyAYZ0vDsEFeqGHm9HD0KsnDJjZTtRbunsI")
-                    .latlng(currentPosition.latitude, currentPosition.longitude)//현재 위치
-                    .radius(5000) //5000 미터 내에서 검색
-                    .name(cafeName) //중요. 카페 이름으로 주변 카페 찾기
-                    .build()
-                    .execute();
+            if (cafeName != null) {
+                new NRPlaces.Builder()
+                        .listener(MapActivity.this)
+                        .key("AIzaSyAYZ0vDsEFeqGHm9HD0KsnDJjZTtRbunsI")
+                        .latlng(currentPosition.latitude, currentPosition.longitude)//현재 위치
+                        .radius(5000) //5000 미터 내에서 검색
+                        .name(cafeName) //중요. 카페 이름으로 주변 카페 찾기
+                        .build()
+                        .execute();
+            }else{
+                new NRPlaces.Builder()
+                        .listener(MapActivity.this)
+                        .key("AIzaSyAYZ0vDsEFeqGHm9HD0KsnDJjZTtRbunsI")
+                        .latlng(currentPosition.latitude, currentPosition.longitude)//현재 위치
+                        .radius(5000) //5000 미터 내에서 검색
+                        .type(PlaceType.CAFE) //중요. 카페 이름으로 주변 카페 찾기
+                        .build()
+                        .execute();
+
+            }
         }
     }
 
