@@ -50,6 +50,7 @@
             android:id="@+id/caffeine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:onClick="selectCaffeine"
             android:text="@string/category_caffeine" />
 
