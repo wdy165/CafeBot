@@ -53,9 +53,10 @@
             android:height="40px"
             android:background="@drawable/radius"
             android:gravity="center"
+            android:fontFamily="@font/bmjua"
             android:text="GO"
             android:textColor="#fff"
-            android:textSize="16dp"
+            android:textSize="24dp"
             android:enabled="false"/>
     </FrameLayout>
 

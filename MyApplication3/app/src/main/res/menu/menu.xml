@@ -22,7 +22,6 @@
         <item
             android:id="@+id/action_made"
             android:title="@string/action_made"
-
             />
 
 

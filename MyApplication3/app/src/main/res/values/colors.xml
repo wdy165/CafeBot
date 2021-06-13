@@ -12,7 +12,8 @@
     <color name="bgc">#FF9999FF</color>
     <color name="coffee">#c1a694</color>
 
-    <color name="cfb">#9999ff</color>
+    <color name="line">#6767e6</color>
+    <color name="cfb">#FF9999FF</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>

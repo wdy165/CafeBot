@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:background="@color/bgc"
     tools:context=".FilterActivity">
 
@@ -21,6 +21,8 @@
             android:layout_height="wrap_content"
             android:text="@string/filter_low"
             android:textColor="@color/black"
+            android:textSize="23dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/bmjua"/>
 
         <RadioButton
@@ -29,6 +31,8 @@
             android:layout_height="wrap_content"
             android:text="@string/filter_high"
             android:textColor="@color/black"
+            android:textSize="23dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/bmjua"/>
     </RadioGroup>
 
@@ -38,6 +42,8 @@
         android:layout_height="wrap_content"
         android:onClick="goback"
         android:text="@string/goback"
+        android:textSize="24dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/bmjua"
         android:textColor="@color/black"
         android:background="@color/teal_200"

@@ -214,6 +214,7 @@
             android:id="@+id/sortHigh2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:text="@string/filter_high"
             android:fontFamily="@font/bmjua"
             android:textSize="20dp"
@@ -225,6 +226,7 @@
             android:layout_height="wrap_content"
             android:text="@string/filter_low"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/bmjua"
             android:textSize="20dp"
             android:textColor="@color/black"/>
@@ -237,6 +239,7 @@
         android:layout_height="wrap_content"
         android:onClick="goback"
         android:text="@string/goback"
+        android:textSize="24dp"
         android:fontFamily="@font/bmjua"
         android:textColor="@color/black"
         android:background="@color/teal_200"

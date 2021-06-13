@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
     private int categoryState = 0;
     private int subcategoryState = 0;
 
-    private ViewPagerAdapter viewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,15 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*public void cafeSearch(View v){
-        EditText editText = (EditText)findViewById(R.id.editText);
-        String str = editText.getText().toString();
-
-        Intent intent = new Intent(getApplicationContext(), MapActivity.class);
-        intent.putExtra("cafeName", str);
-        startActivity(intent);
-    }*/
-
     //툴바
     private void InitializeLayout() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -102,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_reorder_white_24dp); //뒤로가기 버튼 이미지 지정
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -171,86 +160,6 @@ public class MainActivity extends AppCompatActivity {
                 mainFiltering(resultCode);
                 break;
             case 2 :
-                categorySetting(resultCode);
-                break;
-            default:
-                break;
-        }
-    }
-
-    // 카테고리 분류 메소드
-    public void categorySetting(int resultCode){
-        categoryState = resultCode;
-
-        // 코드 추가
-        switch (categoryState){
-            case 1 :
-                Toast.makeText(getApplicationContext(), "카페인 선택", Toast.LENGTH_LONG).show();
-                switch (subcategoryState){
-                    case 5 :
-                        Toast.makeText(getApplicationContext(), "에스프레소&라떼 선택", Toast.LENGTH_LONG).show();
-                        break;
-                    case 6 :
-                        Toast.makeText(getApplicationContext(), "콜드브루 선택", Toast.LENGTH_LONG).show();
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case 2 :
-                Toast.makeText(getApplicationContext(), "디카페인 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 3 :
-                Toast.makeText(getApplicationContext(), "라떼 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 4 :
-                Toast.makeText(getApplicationContext(), "블렌디드 선택", Toast.LENGTH_LONG).show();
-                switch (subcategoryState){
-                    case 1 :
-                        Toast.makeText(getApplicationContext(), "프라페 선택", Toast.LENGTH_LONG).show();
-                        break;
-                    case 2 :
-                        Toast.makeText(getApplicationContext(), "쉐이크 선택", Toast.LENGTH_LONG).show();
-                        break;
-                    case 3 :
-                        Toast.makeText(getApplicationContext(),"스무디 선택", Toast.LENGTH_LONG).show();
-                        break;
-                    case 4 :
-                        Toast.makeText(getApplicationContext(), "과일주스 선택", Toast.LENGTH_LONG).show();
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            case 5 :
-                Toast.makeText(getApplicationContext(), "요거트 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 6 :
-                Toast.makeText(getApplicationContext(), "에이드 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 7 :
-                Toast.makeText(getApplicationContext(), "티 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 8 :
-                Toast.makeText(getApplicationContext(), "케이크 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 9 :
-                Toast.makeText(getApplicationContext(), "아이스크림 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 10 :
-                Toast.makeText(getApplicationContext(), "샌드위치 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 11 :
-                Toast.makeText(getApplicationContext(), "베이커리 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 12 :
-                Toast.makeText(getApplicationContext(), "샐러드 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 13 :
-                Toast.makeText(getApplicationContext(), "빙수 선택", Toast.LENGTH_LONG).show();
-                break;
-            case 14 :
-                Toast.makeText(getApplicationContext(), "기타 선택", Toast.LENGTH_LONG).show();
                 break;
             default:
                 break;
@@ -279,8 +188,6 @@ public class MainActivity extends AppCompatActivity {
 
     //추가된 소스, ToolBar에 추가된 항목의 select 이벤트를 처리하는 함수
     public boolean onOptionsItemSelected(MenuItem item) {
-        //return super.onOptionsItemSelected(item);
-
         switch (item.getItemId()) {
 
             case android.R.id.home:
@@ -378,23 +285,18 @@ public class MainActivity extends AppCompatActivity {
     class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-
             switch (menuItem.getItemId()) {
                 case R.id.searchItem:
                     Intent intent1 = new Intent(getApplicationContext(), com.example.myapplication.SearchActivity.class);
                     startActivity(intent1);
-                    //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
                     break;
                 case R.id.homeItem:
                     Intent intent2 = new Intent(getApplicationContext(), com.example.myapplication.MainActivity.class);
                     startActivity(intent2);
-                    //transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
                     break;
                 case R.id.cafeItem:
                     Intent intent3 = new Intent(getApplicationContext(), com.example.myapplication.MainCflistActivity.class);
                     startActivity(intent3);
-                    //transaction.replace(R.id.frameLayout, fragmentCafe).commitAllowingStateLoss();
                     break;
             }
             return true;

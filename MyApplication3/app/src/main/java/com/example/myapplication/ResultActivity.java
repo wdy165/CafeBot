@@ -50,9 +50,6 @@ public class ResultActivity extends AppCompatActivity {
 
         list = new ArrayList<>();
 
-        // 텍스트 검색결과값 가져오기
-        //this.findSearchDataValue();
-
         // 뷰페이저 (메뉴검색결과값)
         this.viewpage();
 
@@ -313,8 +310,6 @@ public class ResultActivity extends AppCompatActivity {
                 // handle exception
             }
         }
-
-
         resultCur = (TextView) findViewById(R.id.resultCurNum);
         resultNum = (TextView) findViewById(R.id.resultSumNum);
 
@@ -348,21 +343,17 @@ public class ResultActivity extends AppCompatActivity {
                 case R.id.searchItem:
                     Intent intent1 = new Intent(getApplicationContext(), com.example.myapplication.SearchActivity.class);
                     startActivity(intent1);
-                    //transaction.replace(R.id.frameLayout, fragmentSearch).commitAllowingStateLoss();
                     break;
                 case R.id.homeItem:
                     Intent intent2 = new Intent(getApplicationContext(), com.example.myapplication.MainActivity.class);
                     startActivity(intent2);
-                    //transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
                     break;
                 case R.id.cafeItem:
                     Intent intent3 = new Intent(getApplicationContext(), com.example.myapplication.MainCflistActivity.class);
                     startActivity(intent3);
-                    //transaction.replace(R.id.frameLayout, fragmentCafe).commitAllowingStateLoss();
                     break;
             }
             return true;
         }
     }
-
 }

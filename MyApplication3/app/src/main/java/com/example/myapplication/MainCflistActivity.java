@@ -27,9 +27,6 @@ public class MainCflistActivity extends FragmentActivity {
     // 바텀네비게이션뷰
     private BottomNavigationView bottomNav;
     private FragmentManager fragmentManager = getSupportFragmentManager();
-    private SearchPage fragmentSearch = new SearchPage();
-    private HomePage fragmentHome = new HomePage();
-    private CafePage fragmentCafe = new CafePage();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

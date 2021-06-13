@@ -10,7 +10,7 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="50dp"
         android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/cfb"
+        android:background="@color/line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
@@ -58,7 +58,7 @@
             android:onClick="selectCaffeine"
             android:text="@string/category_caffeine"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="19dp" />
 
         <RadioButton
             android:id="@+id/decaffeine"
@@ -67,7 +67,7 @@
             android:onClick="selectElse"
             android:text="@string/category_decaffeine"
             android:fontFamily="@font/bmjua"
-            android:textSize="20dp"
+            android:textSize="19dp"
             android:textColor="@color/black"/>
 
         <RadioButton
@@ -77,7 +77,7 @@
             android:onClick="selectElse"
             android:text="@string/category_latte"
             android:fontFamily="@font/bmjua"
-            android:textSize="20dp"
+            android:textSize="19dp"
             android:textColor="@color/black"/>
 
         <RadioButton
@@ -88,7 +88,7 @@
             android:onClick="selectBlended"
             android:text="@string/category_blended"
             android:fontFamily="@font/bmjua"
-            android:textSize="20dp"
+            android:textSize="19dp"
             android:textColor="@color/black"/>
 
         <RadioButton
@@ -98,7 +98,7 @@
             android:onClick="selectElse"
             android:text="@string/category_yogurt"
             android:fontFamily="@font/bmjua"
-            android:textSize="20dp"
+            android:textSize="19dp"
             android:textColor="@color/black"/>
 
         <RadioButton
@@ -108,7 +108,7 @@
             android:onClick="selectElse"
             android:text="@string/category_ade"
             android:fontFamily="@font/bmjua"
-            android:textSize="20dp"
+            android:textSize="19dp"
             android:textColor="@color/black"/>
 
         <RadioButton
@@ -118,7 +118,7 @@
             android:onClick="selectElse"
             android:text="@string/category_tea"
             android:fontFamily="@font/bmjua"
-            android:textSize="20dp"
+            android:textSize="19dp"
             android:textColor="@color/black"/>
 
     </RadioGroup>

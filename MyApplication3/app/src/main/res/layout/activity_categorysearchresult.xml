@@ -28,7 +28,7 @@
                 android:text="@string/result_text1"
                 android:fontFamily="@font/bmjua"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="27sp"
                 android:layout_marginBottom="20dp"
                 app:layout_constraintBottom_toTopOf="@+id/resultViewPager2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,8 @@
                 android:text="@string/categoryresult_text"
                 android:fontFamily="@font/bmjua"
                 android:textColor="@color/black"
-                android:textSize="23sp"
+                android:textSize="24sp"
+                android:layout_marginBottom="5dp"
                 app:layout_constraintBottom_toTopOf="@+id/resultText1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -87,7 +88,7 @@
                 android:id="@+id/resultCurNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 app:layout_constraintRight_toLeftOf="@+id/resultSlash"
@@ -98,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:textSize="20sp"
+                android:textSize="23sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:text=" / "
@@ -110,32 +111,13 @@
                 android:id="@+id/resultSumNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 app:layout_constraintLeft_toRightOf="@+id/resultSlash"
                 app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-<!--
-            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-                android:id="@+id/dots_indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                app:dotsColor="@color/white"
-                app:dotsCornerRadius="8dp"
-                app:dotsSize="14dp"
-                app:dotsSpacing="4dp"
-                app:dotsWidthFactor="2.5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultViewPager2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:progressMode="true"
-                app:selectedDotColor="@color/black" />
-                -->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
