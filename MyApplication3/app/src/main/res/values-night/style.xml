@@ -8,4 +8,10 @@
         <item name="android:textColor">@android:color/black</item>
 
     </style>
+    <style name="bmFont" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/bmjua</item>
+    </style>
+
+
+
 </resources>

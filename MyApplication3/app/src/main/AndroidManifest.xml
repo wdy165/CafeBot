@@ -18,17 +18,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAuzpEXf9qC0CUjRwsqPAvbUrTP_QD-88w"/>
         <activity android:name=".MapActivity"></activity>
-        <activity
-            android:name=".DessertMenu"
+        <activity android:name=".DessertMenu"
             android:label="디저트"
-            android:theme="@style/Theme.AppCompat.Dialog" />
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
         <activity
             android:name=".DrinkMenu"
-            android:label="커피 &amp; 음료"
+            android:label="               커피 &amp; 음료"
+            android:fontFamily="@font/bmjua"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".SearchFilter"
-            android:label="랜덤 메뉴 필터"
+            android:label="                     랜덤 메뉴 필터"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".FilterActivity"

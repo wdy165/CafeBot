@@ -7,6 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_guide">Guide</string>
     <string name="action_qna">QnA</string>
+    <string name="action_map">지도</string>
     <string name="action_made">제작</string>
     <string name="madeby">카페인 : 원동연, 조민수, 최선재, 최수현, 홍지원</string>
 
@@ -49,7 +50,7 @@
 
 
     <!-- 디저트 분류-->
-    <string name="category_cake">케잌</string>
+    <string name="category_cake">케이크</string>
     <string name="category_icecream">아이스크림</string>
     <string name="category_sandwich">샌드위치</string>
     <string name="category_bakery">베이커리</string>

@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+
         android:orientation="horizontal">
 
         <RadioButton
@@ -18,24 +19,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="@string/category_frappe" />
+            android:fontFamily="@font/bmjua"
+            android:text="@string/category_frappe"
+            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/shake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category_shake" />
+            android:text="@string/category_shake"
+            android:fontFamily="@font/bmjua"
+            android:textColor="@color/black"/>
 
         <RadioButton
             android:id="@+id/smoothie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category_smoothie" />
+            android:text="@string/category_smoothie"
+            android:fontFamily="@font/bmjua"
+            android:textColor="@color/black"/>
 
         <RadioButton
             android:id="@+id/juice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category_juice" />
+            android:text="@string/category_juice"
+            android:fontFamily="@font/bmjua"
+            android:textColor="@color/black"/>
+
+
     </RadioGroup>
+
 </FrameLayout>

@@ -29,6 +29,7 @@
             android:layout_marginTop="32dp"
             android:layout_toRightOf="@+id/img_logo"
             android:text="Cafe List"
+            android:fontFamily="@font/bmjua"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold" />

@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:text="카페메뉴가"
-        android:textSize="25sp"
+        android:fontFamily="@font/happystory"
+        android:textSize="50sp"
         android:layout_centerInParent="true"
         android:layout_above="@+id/TextView_2" />
 
@@ -19,8 +20,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="고민될 때는?"
-        android:textSize="25sp"
+        android:text=" 고민될 때는?"
+        android:fontFamily="@font/happystory"
+        android:textSize="50sp"
         android:layout_centerInParent="true"
         android:layout_above="@+id/ImageView_1" />
 
@@ -35,14 +37,17 @@
         android:layout_marginEnd="54dp"
         android:layout_marginRight="54dp"
         android:layout_marginBottom="20dp"
+        android:layout_centerInParent="true"
         android:background="@drawable/loading" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAFEBOT"
+        android:text="C A F E B O T"
+        android:fontFamily="@font/bmdohyun"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_centerInParent="true"
         android:layout_below="@+id/ImageView_1" />
 
